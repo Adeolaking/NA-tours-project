@@ -1,0 +1,40 @@
+@keyframes moveInLeft {
+    0%{
+        @include opacity(0);
+        transform: translateX(-10rem)
+    }
+    80%{
+        
+        transform: translate(10rem)
+
+    }
+    100%{
+        @include opacity(1);
+        transform: translate(0)
+    }
+}
+@keyframes moveInRight {
+    0%{
+        @include opacity(0);
+        transform: translateX(100px)
+    }
+    80%{
+        
+        transform: translate(1rem)
+
+    }
+    100%{
+        @include opacity(1);
+        transform: translate(0)
+    }
+}
+@keyframes moveInBotton{
+    0%{
+        @include opacity(0);
+        transform: translateY(3rem);
+    }
+    100%{
+        @include opacity(1);
+        transform: translate(0);
+    }
+}

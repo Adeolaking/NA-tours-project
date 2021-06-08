@@ -1,0 +1,11 @@
+@mixin opacity($in){
+    opacity: $in;
+}
+
+@mixin clearfix {
+    &::after{
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
