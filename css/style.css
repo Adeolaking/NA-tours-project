@@ -271,7 +271,7 @@ body {
   padding: 1rem;
   overflow: hidden;
   background-size: cover;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.89), rgba(40, 180, 133, 0.7)), url(../../img/hero.jpg);
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.89), rgba(40, 180, 133, 0.7)), url(../img/hero.jpg);
   background-position: top;
   clip-path: polygon(0 0, 100% 0%, 100% 75vh, 0 100%); }
   .header__logo {
