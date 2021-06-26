@@ -47,8 +47,16 @@
             background-color :$color-white;   
         }
     }
-    
-    
+    &--green{
+        background: $color-primary;
+        color:$color-white;
+
+
+        &::after{
+            background-color :$color-primary-dark;   
+        }
+
+    }
     
     &-animated{
         animation: moveInBotton .5s ease-out .75s;
