@@ -1,5 +1,5 @@
 .btn{
-    
+    &,
     &:link,
     &:visited{
     text-decoration: none;
@@ -10,6 +10,10 @@
     transition: all .2s;
     font-size: $default-font-size;
     position: relative; 
+
+    //  remove button border
+    border: none;
+    cursor: pointer;
     }
 
     &:hover{
@@ -50,6 +54,7 @@
     &--green{
         background: $color-primary;
         color:$color-white;
+        outline: none;
 
 
         &::after{
