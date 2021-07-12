@@ -586,6 +586,44 @@ body {
   opacity: 1;
   display: block; }
 
+.navigation__icon {
+  position: relative;
+  top: 34px;
+  left: 9px; }
+  .navigation__icon, .navigation__icon::after, .navigation__icon::before {
+    background-color: #000;
+    height: .2rem;
+    width: 5rem;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s; }
+  .navigation__icon::before {
+    content: " ";
+    position: absolute;
+    top: -10px; }
+  .navigation__icon::after {
+    content: " ";
+    position: absolute;
+    bottom: -10px;
+    left: 0; }
+
+.navigation__button:hover .navigation__icon::after {
+  cursor: pointer;
+  bottom: -15px; }
+
+.navigation__button:hover .navigation__icon::before {
+  cursor: pointer;
+  top: -15px; }
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon {
+  background-color: transparent; }
+  .navigation__checkbox:checked + .navigation__button .navigation__icon::after {
+    bottom: 0;
+    transform: rotateZ(45deg); }
+  .navigation__checkbox:checked + .navigation__button .navigation__icon::before {
+    top: 0;
+    transform: rotateZ(-45deg); }
+
 .section-about {
   background-color: #f7f7f7;
   background-size: cover;
