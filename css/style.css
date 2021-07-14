@@ -470,7 +470,22 @@ body {
   height: 100vh;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.8); }
+  background-color: rgba(0, 0, 0, 0.8);
+  visibility: hidden;
+  opacity: 0;
+  transition: all .3s; }
+  .pop-up:target {
+    visibility: visible;
+    opacity: 1; }
+  .pop-up__close {
+    display: inline-block;
+    font-size: 3rem; }
+    .pop-up__close:link, .pop-up__close:visited {
+      text-decoration: none;
+      color: #777;
+      position: absolute;
+      top: 0;
+      right: 5rem; }
   .pop-up__image {
     width: 100%;
     display: block; }
@@ -486,13 +501,13 @@ body {
     overflow: hidden;
     display: table; }
   .pop-up__right {
-    width: 33.3333%;
-    display: table-cell; }
-  .pop-up__left {
     width: 66.66667%;
     display: table-cell;
     vertical-align: middle;
     padding: 3rem 4rem; }
+  .pop-up__left {
+    width: 33.3333%;
+    display: table-cell; }
   .pop-up__text {
     font-size: 1.4rem;
     margin-bottom: 3rem;
