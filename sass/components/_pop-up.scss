@@ -23,12 +23,16 @@
             text-decoration: none;
             color: $color-gray-dark;
             position: absolute;
+            display: inline-block;
+            font-size: 3rem;
             top :0;
             right: 5rem;
+            transition: all .2s;
         }
-        display: inline-block;
-        font-size: 3rem;
-        
+        &:hover{
+            color: $color-primary;
+        }
+
     }
 
     &__image{
