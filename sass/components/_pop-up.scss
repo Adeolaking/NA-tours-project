@@ -10,31 +10,6 @@
     visibility: hidden;
     opacity: 0;
     transition: all .3s;
-    
-    &:target{
-        // display: block;
-        visibility: visible;
-        opacity: 1;
-
-    }
-    &__close{
-        &:link,
-        &:visited{
-            text-decoration: none;
-            color: $color-gray-dark;
-            position: absolute;
-            display: inline-block;
-            font-size: 3rem;
-            top :0;
-            right: 5rem;
-            
-        }
-        &:hover{
-            color: $color-primary;
-        }
-
-        
-    }
 
     &__image{
         width: 100%;
@@ -43,16 +18,17 @@
     
     &__content{
         width:70vw;
-        // height: 70vh;
         background-color: $color-white;
         position: absolute;
         top:50%;
         left:50%;
-        transform:translate(-50%, -50%);
+        transform:translate(-50%, -50%) scale(.25);
         box-shadow: 0 2rem 3rem rgba( $color-black, .2);
         border-radius: 3px;
         overflow: hidden;
         display: table;
+        opacity: 0;
+        transition: all .3s .2s;
         
     } 
     &__right{
@@ -74,6 +50,37 @@
         column-gap: 4rem;
         column-rule: 1px solid $color-gray-light-1;
         hyphens: auto;
+    }
+
+    // popup functionallity
+    &:target{
+        // display: block;
+        visibility: visible;
+        opacity: 1;
+
+    }
+    &:target &__content{
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    &__close{
+        &:link,
+        &:visited{
+            text-decoration: none;
+            color: $color-gray-dark;
+            position: absolute;
+            display: inline-block;
+            font-size: 3rem;
+            top :0;
+            right: 5rem;
+            
+        }
+        &:hover{
+            color: $color-primary;
+        }
+
+        
     }
 }
     
