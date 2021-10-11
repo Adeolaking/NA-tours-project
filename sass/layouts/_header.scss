@@ -3,11 +3,14 @@
     padding:1rem;
     overflow: hidden;
     background-size: cover;
-    background-image:linear-gradient(to right bottom, rgba($color-primary-light, .89), rgba($color-primary-dark, .7)), url(../../img/hero.jpg);
+    background-image:linear-gradient(to right bottom, rgba($color-primary-light, .89), rgba($color-primary-dark, .7)), url(../../img/hero-small.jpg);
 
     position: relative;
     clip-path: polygon(0 0,100% 0%, 100% 75vh , 0 100%);
-
+     
+    @media (min-width:37.5em), (min-width:125em){
+        background-image:linear-gradient(to right bottom, rgba($color-primary-light, .89), rgba($color-primary-dark, .7)), url(../../img/hero.jpg);
+    }
     
     &__logo{
         height: 3.5rem;
@@ -28,5 +31,8 @@
         text-align: center;
         transform: translate(-50%,-50%);
         min-width: 80rem;
+        @include respond(phone){
+         
+        }
     }
 }

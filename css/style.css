@@ -33,6 +33,12 @@
 
 html {
   font-size: 62.5%; }
+  @media (max-width: 75em) {
+    html {
+      font-size: 50%; } }
+  @media (max-width: 37.5em) {
+    html {
+      font-size: 43%; } }
 
 body {
   box-sizing: border-box; }
@@ -72,12 +78,20 @@ body {
     font-weight: 400;
     letter-spacing: 3.5rem;
     animation: moveInLeft 1s ease-out; }
+    @media (max-width: 37.5em) {
+      .heading-primary--main {
+        letter-spacing: 1.5rem;
+        font-weight: 600; } }
   .heading-primary--sub {
     display: block;
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: 1.7rem;
     animation: moveInRight 1s ease-out; }
+    @media (max-width: 37.5em) {
+      .heading-primary--sub {
+        letter-spacing: 1.2rem;
+        font-weight: 600; } }
 
 .heading-secondary {
   font-size: 3.5rem;
@@ -181,6 +195,12 @@ body {
     position: absolute;
     transition: all .2s;
     outline-offset: 1.5rem; }
+    @media (max-width: 37.5em) {
+      .composition__photo {
+        position: initial;
+        margin: 3rem auto;
+        display: block;
+        width: 100%; } }
     .composition__photo-1 {
       left: 0;
       top: -2rem; }
@@ -195,8 +215,15 @@ body {
       transform: translateY(-0.5rem) scale(1.05);
       z-index: 10;
       box-shadow: 0 2.4rem 4rem rgba(0, 0, 0, 0.5); }
+      @media (max-width: 37.5em) {
+        .composition__photo:hover {
+          outline: none;
+          transform: none; } }
   .composition:hover .composition__photo:not(:hover) {
     transform: scale(0.95); }
+    @media (max-width: 37.5em) {
+      .composition:hover .composition__photo:not(:hover) {
+        transform: none; } }
 
 .features-box {
   text-align: center;
@@ -207,6 +234,9 @@ body {
   border-radius: .3rem;
   transition: all .3s;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.35); }
+  @media (max-width: 37.5em) {
+    .features-box {
+      margin: 20px auto; } }
   .features-box_icon {
     font-size: 6rem;
     font-weight: bold;
@@ -223,6 +253,9 @@ body {
   position: relative;
   transition: all .8s;
   height: 51rem; }
+  @media (max-width: 37.5em) {
+    .card {
+      margin: 30px auto; } }
   .card__side {
     position: absolute;
     backface-visibility: hidden;
@@ -463,14 +496,76 @@ body {
     width: 80%;
     float: right; }
 
+.pop-up {
+  position: fixed;
+  z-index: 10000;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  visibility: hidden;
+  opacity: 0;
+  transition: all .3s; }
+  .pop-up__image {
+    width: 100%;
+    display: block; }
+  .pop-up__content {
+    width: 70vw;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.25);
+    box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    overflow: hidden;
+    display: table;
+    opacity: 0;
+    transition: all .3s .2s; }
+  .pop-up__right {
+    width: 66.66667%;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 3rem 4rem; }
+  .pop-up__left {
+    width: 33.3333%;
+    display: table-cell; }
+  .pop-up__text {
+    font-size: 1.4rem;
+    margin-bottom: 3rem;
+    column-count: 2;
+    column-gap: 4rem;
+    column-rule: 1px solid #f7f7f7;
+    hyphens: auto; }
+  .pop-up:target {
+    visibility: visible;
+    opacity: 1; }
+  .pop-up:target .pop-up__content {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1); }
+  .pop-up__close:link, .pop-up__close:visited {
+    text-decoration: none;
+    color: #777;
+    position: absolute;
+    display: inline-block;
+    font-size: 3rem;
+    top: 0;
+    right: 5rem; }
+  .pop-up__close:hover {
+    color: #55c57a; }
+
 .header {
   height: 95vh;
   padding: 1rem;
   overflow: hidden;
   background-size: cover;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.89), rgba(40, 180, 133, 0.7)), url(../../img/hero.jpg);
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.89), rgba(40, 180, 133, 0.7)), url(../../img/hero-small.jpg);
   position: relative;
   clip-path: polygon(0 0, 100% 0%, 100% 75vh, 0 100%); }
+  @media (min-width: 37.5em), (min-width: 125em) {
+    .header {
+      background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.89), rgba(40, 180, 133, 0.7)), url(../../img/hero.jpg); } }
   .header__logo {
     height: 3.5rem; }
     .header__logo-box {
@@ -490,6 +585,9 @@ body {
 .row {
   max-width: 114rem;
   margin: 0 auto; }
+  @media (max-width: 37.5em) {
+    .row {
+      width: 50rem; } }
   .row:not(:last-child) {
     margin-bottom: 8rem; }
   .row::after {
@@ -500,6 +598,9 @@ body {
     float: left; }
     .row [class^="col-"]:not(:last-child) {
       margin-right: 7rem; }
+    @media (max-width: 56.25em) {
+      .row [class^="col-"] {
+        width: 100% !important; } }
   .row .col-1-of-2 {
     width: calc((100% - 7rem) /2); }
   .row .col-1-of-3 {
@@ -586,11 +687,52 @@ body {
   opacity: 1;
   display: block; }
 
+.navigation__icon {
+  position: relative;
+  top: 3.4rem;
+  left: .9rem; }
+  .navigation__icon, .navigation__icon::after, .navigation__icon::before {
+    background-color: #000;
+    height: .2rem;
+    width: 5rem;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s; }
+  .navigation__icon::before {
+    content: " ";
+    position: absolute;
+    top: -1rem; }
+  .navigation__icon::after {
+    content: " ";
+    position: absolute;
+    bottom: -1rem;
+    left: 0; }
+
+.navigation__button:hover .navigation__icon::after {
+  cursor: pointer;
+  bottom: -1.5rem; }
+
+.navigation__button:hover .navigation__icon::before {
+  cursor: pointer;
+  top: -1.5rem; }
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon {
+  background-color: transparent; }
+  .navigation__checkbox:checked + .navigation__button .navigation__icon::after {
+    bottom: 0;
+    transform: rotateZ(45deg); }
+  .navigation__checkbox:checked + .navigation__button .navigation__icon::before {
+    top: 0;
+    transform: rotateZ(-45deg); }
+
 .section-about {
   background-color: #f7f7f7;
   background-size: cover;
   padding: 25rem 0;
   margin-top: -20vh; }
+  @media (max-width: 37.5em) {
+    .section-about {
+      padding: 20vh 4rem; } }
 
 .section-features {
   margin-top: -10rem;
@@ -618,6 +760,12 @@ body {
   box-shadow: 0 1.5rem 2rem rgba(0, 0, 0, 0.2);
   background-size: 100%;
   height: 56rem; }
+  @media (max-width: 37.5em) {
+    .book {
+      background: linear-gradient(rgba(255, 255, 255, 0.9) 100%, transparent 50%), url(../../img/nat-10.jpg); } }
   .book-form {
     width: 50%;
     padding: 6rem; }
+    @media (max-width: 37.5em) {
+      .book-form {
+        width: 100%; } }

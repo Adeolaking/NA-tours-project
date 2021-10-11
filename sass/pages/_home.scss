@@ -3,6 +3,10 @@
     background-size: cover;
     padding: 25rem 0;
     margin-top: -20vh; 
+    @include respond(phone){
+        padding:20vh 4rem;
+    }
+
 }   
 .section-features{
     margin-top:-10rem;
@@ -18,7 +22,6 @@
     padding:20rem 0;
     margin-top:-10rem;
     background-color:$color-gray-light-1;
- 
     
 }
 .section-stories{
@@ -32,11 +35,18 @@
 }
 .book{
     background: linear-gradient(105deg, rgba($color-white, .9) 50%, transparent 50%),url(../../img/nat-10.jpg);
+
+    @include respond(phone){
+        background: linear-gradient(rgba($color-white, .9) 100%, transparent 50%),url(../../img/nat-10.jpg);
+    }
     box-shadow: 0 1.5rem 2rem rgba($color-black, .2);
     background-size: 100%;
     height: 56rem;
     &-form{
         width: 50%;
+        @include respond(phone){
+            width:100%
+        }
         padding: 6rem;
     }
 }
