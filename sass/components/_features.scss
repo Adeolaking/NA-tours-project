@@ -8,7 +8,10 @@
         border-radius: .3rem;
         transition:all .3s;
         box-shadow: 0 1.5rem 4rem rgba($color-black, .35);
-
+        @include respond(phone){
+            // width: 50%;
+            margin: 20px auto;
+        }
 
         &_icon{
             font-size: 6rem;
