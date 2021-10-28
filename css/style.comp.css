@@ -1,57 +1,3 @@
-.section-about {
-  background-color: #f7f7f7;
-  background-size: cover;
-  padding: 25rem 0;
-  margin-top: -20vh; }
-  @media (max-width: 37.5em) {
-    .section-about {
-      padding: 20vh 4rem; } }
-
-.section-features {
-  margin-top: -10rem;
-  padding: 20rem 0;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.89), rgba(40, 180, 133, 0.7)), url(../../img/nat-4.jpg);
-  transform: skewY(-7deg); }
-  .section-features .row {
-    transform: skewY(7deg); }
-
-.section-tours {
-  padding: 20rem 0;
-  margin-top: -10rem;
-  background-color: #f7f7f7; }
-
-.section-stories {
-  position: relative;
-  padding: 15rem 0; }
-
-.section-book {
-  padding: 20rem 0;
-  background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
-
-.book {
-  background: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(../../img/nat-10.jpg);
-  background-repeat: no-repeat;
-  min-width: 500px;
-  box-shadow: 0 1.5rem 2rem rgba(0, 0, 0, 0.2);
-  background-size: cover;
-  min-height: 56rem; }
-  @media (max-width: 37.5em) {
-    .book {
-      background: linear-gradient(rgba(255, 255, 255, 0.9) 100%, transparent 50%), url(../../img/nat-10.jpg);
-      width: 100%; } }
-  @media (max-width: 56.25em) {
-    .book {
-      background: linear-gradient(rgba(255, 255, 255, 0.9) 100%, transparent 50%), url(../../img/nat-10.jpg); } }
-  .book-form {
-    width: 50%;
-    padding: 6rem; }
-    @media (max-width: 37.5em) {
-      .book-form {
-        width: 100%; } }
-    @media (max-width: 56.25em) {
-      .book-form {
-        width: 100%; } }
-
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -87,6 +33,12 @@
 
 html {
   font-size: 62.5%; }
+  @media (max-width: 75em) {
+    html {
+      font-size: 50%; } }
+  @media (max-width: 37.5em) {
+    html {
+      font-size: 45%; } }
 
 body {
   box-sizing: border-box; }
@@ -114,9 +66,6 @@ body {
   line-height: 1.7;
   color: #777;
   padding: 3rem; }
-  @media (max-width: 37.5em) {
-    body {
-      padding: 0; } }
 
 .heading-primary {
   text-transform: uppercase;
@@ -520,14 +469,76 @@ body {
     width: 80%;
     float: right; }
 
+.pop-up {
+  position: fixed;
+  z-index: 10000;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  visibility: hidden;
+  opacity: 0;
+  transition: all .3s; }
+  .pop-up__image {
+    width: 100%;
+    display: block; }
+  .pop-up__content {
+    width: 70vw;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.25);
+    box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    overflow: hidden;
+    display: table;
+    opacity: 0;
+    transition: all .3s .2s; }
+  .pop-up__right {
+    width: 66.66667%;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 3rem 4rem; }
+  .pop-up__left {
+    width: 33.3333%;
+    display: table-cell; }
+  .pop-up__text {
+    font-size: 1.4rem;
+    margin-bottom: 3rem;
+    column-count: 2;
+    column-gap: 4rem;
+    column-rule: 1px solid #f7f7f7;
+    hyphens: auto; }
+  .pop-up:target {
+    visibility: visible;
+    opacity: 1; }
+  .pop-up:target .pop-up__content {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1); }
+  .pop-up__close:link, .pop-up__close:visited {
+    text-decoration: none;
+    color: #777;
+    position: absolute;
+    display: inline-block;
+    font-size: 3rem;
+    top: 0;
+    right: 5rem; }
+  .pop-up__close:hover {
+    color: #55c57a; }
+
 .header {
   height: 95vh;
   padding: 1rem;
   overflow: hidden;
   background-size: cover;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.89), rgba(40, 180, 133, 0.7)), url(../../img/hero.jpg);
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.89), rgba(40, 180, 133, 0.7)), url(../../img/hero-small.jpg);
   position: relative;
   clip-path: polygon(0 0, 100% 0%, 100% 75vh, 0 100%); }
+  @media (min-width: 37.5em), (min-width: 125em) {
+    .header {
+      background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.89), rgba(40, 180, 133, 0.7)), url(../../img/hero.jpg); } }
   .header__logo {
     height: 3.5rem; }
     .header__logo-box {
@@ -557,6 +568,9 @@ body {
     float: left; }
     .row [class^="col-"]:not(:last-child) {
       margin-right: 7rem; }
+    @media (max-width: 56.25em) {
+      .row [class^="col-"] {
+        width: 100% !important; } }
   .row .col-1-of-2 {
     width: calc((100% - 7rem) /2); }
   .row .col-1-of-3 {
@@ -643,43 +657,6 @@ body {
   opacity: 1;
   display: block; }
 
-<<<<<<< HEAD
-.section-about {
-  background-color: #f7f7f7;
-  background-size: cover;
-  padding: 25rem 0;
-  margin-top: -20vh; }
-
-.section-features {
-  margin-top: -10rem;
-  padding: 20rem 0;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.89), rgba(40, 180, 133, 0.7)), url(../../img/nat-4.jpg);
-  transform: skewY(-7deg); }
-  .section-features .row {
-    transform: skewY(7deg); }
-
-.section-tours {
-  padding: 20rem 0;
-  margin-top: -10rem;
-  background-color: #f7f7f7; }
-
-.section-stories {
-  position: relative;
-  padding: 15rem 0; }
-
-.section-book {
-  padding: 20rem 0;
-  background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
-
-.book {
-  background: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(../../img/nat-10.jpg);
-  box-shadow: 0 1.5rem 2rem rgba(0, 0, 0, 0.2);
-  background-size: 100%;
-  height: 56rem; }
-  .book-form {
-    width: 50%;
-    padding: 6rem; }
-=======
 .navigation__icon {
   position: relative;
   top: 3.4rem;
@@ -717,4 +694,39 @@ body {
   .navigation__checkbox:checked + .navigation__button .navigation__icon::before {
     top: 0;
     transform: rotateZ(-45deg); }
->>>>>>> main
+
+.section-about {
+  background-color: #f7f7f7;
+  background-size: cover;
+  padding: 25rem 0;
+  margin-top: -20vh; }
+
+.section-features {
+  margin-top: -10rem;
+  padding: 20rem 0;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.89), rgba(40, 180, 133, 0.7)), url(../../img/nat-4.jpg);
+  transform: skewY(-7deg); }
+  .section-features .row {
+    transform: skewY(7deg); }
+
+.section-tours {
+  padding: 20rem 0;
+  margin-top: -10rem;
+  background-color: #f7f7f7; }
+
+.section-stories {
+  position: relative;
+  padding: 15rem 0; }
+
+.section-book {
+  padding: 20rem 0;
+  background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
+
+.book {
+  background: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(../../img/nat-10.jpg);
+  box-shadow: 0 1.5rem 2rem rgba(0, 0, 0, 0.2);
+  background-size: 100%;
+  height: 56rem; }
+  .book-form {
+    width: 50%;
+    padding: 6rem; }

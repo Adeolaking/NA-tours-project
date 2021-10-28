@@ -32,11 +32,35 @@
 }
 .book{
     background: linear-gradient(105deg, rgba($color-white, .9) 50%, transparent 50%),url(../../img/nat-10.jpg);
+<<<<<<< HEAD
+=======
+    background-repeat: no-repeat;
+    min-width :500px;
+  
+    @include respond(phone){
+        background: linear-gradient(rgba($color-white, .9) 100%, transparent 50%),url(../../img/nat-10.jpg);
+        width:100%;
+    }
+    @include respond(tab-port){
+        background: linear-gradient(rgba($color-white, .9) 100%, transparent 50%),url(../../img/nat-10.jpg);
+    }
+>>>>>>> main
     box-shadow: 0 1.5rem 2rem rgba($color-black, .2);
-    background-size: 100%;
-    height: 56rem;
+    background-size: cover;
+    min-height: 56rem;
+    
+  
     &-form{
         width: 50%;
+<<<<<<< HEAD
+=======
+        @include respond(phone){
+            width:100%;
+        }
+        @include respond(tab-port){
+            width:100%;
+        }
+>>>>>>> main
         padding: 6rem;
     }
 }
