@@ -35,17 +35,21 @@
 }
 .book{
     background: linear-gradient(105deg, rgba($color-white, .9) 50%, transparent 50%),url(../../img/nat-10.jpg);
+    background-repeat: no-repeat;
+    min-width :900px;
 
     @include respond(phone){
         background: linear-gradient(rgba($color-white, .9) 100%, transparent 50%),url(../../img/nat-10.jpg);
     }
     box-shadow: 0 1.5rem 2rem rgba($color-black, .2);
-    background-size: 100%;
-    height: 56rem;
+    background-size: cover;
+    min-height: 56rem;
+    
+  
     &-form{
         width: 50%;
         @include respond(phone){
-            width:100%
+            width:100%;
         }
         padding: 6rem;
     }
