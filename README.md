@@ -6,3 +6,7 @@ This is an advance css course project.
 
 ****NOTE:*** This project is under development...*
 
+i'm currently working on it reposiveness on mobile  
+
+**Below is link to view live:👇 **
+https://adeolaking.github.io/NA-tours-project/
