@@ -55,6 +55,7 @@
     &__item{
         margin: 1rem;
     }
+
     &__link{
         &:link,
         &:visited{
@@ -77,6 +78,8 @@
         }
 
     }
+
+    //navigation functionallity
     &__checkbox:checked ~ &__background{
             transform: scale(100);
     }
@@ -85,4 +88,55 @@
         opacity: 1;
         display: block;
     }
+    &__icon{
+        position: relative;
+        top: 3.4rem;
+        left: .9rem;
+        &,&::after,&::before{
+            background-color:$color-black;
+            height: .2rem;
+            width:5rem;    
+            display: inline-block;
+            border-radius: 100px;
+            transition:all .2s;
+        }
+
+        &::before{
+            content:" ";
+            position: absolute;
+            top: -1rem;
+        }
+        &::after{
+            content: " ";
+            position: absolute;
+            bottom: -1rem;
+            left: 0;
+           
+        }
+
+    }
+    &__button:hover &__icon::after{
+        cursor: pointer;
+        bottom: -1.5rem;
+    }
+    &__button:hover &__icon::before{
+        cursor: pointer;
+        top: -1.5rem;
+    }
+    
+    &__checkbox:checked + &__button &__icon{
+        &{
+            background-color: transparent;
+            &::after{
+                bottom: 0;
+                transform: rotateZ(45deg);
+            }
+            &::before{
+                top: 0;
+                transform: rotateZ(-45deg);
+            }
+        }
+    }
+
 }
+ 
