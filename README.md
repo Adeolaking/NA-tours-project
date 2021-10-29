@@ -8,5 +8,5 @@ This is an advance css course project.
 
 i'm currently working on it reposiveness on mobile  
 
-**Below is link to view live:👇 **
+**Below is link to view live:👇**
 https://adeolaking.github.io/NA-tours-project/
