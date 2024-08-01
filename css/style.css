@@ -124,7 +124,7 @@ body {
   padding: 3rem; }
   @media (max-width: 37.5em) {
     body {
-      width: fit-content;
+/*       width: fit-content; */
       padding: 0; } }
 
 .heading-primary {
